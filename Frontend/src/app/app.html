@@ -1,0 +1,34 @@
+<header class="app-header">
+  <div class="container">
+    <nav class="navbar">
+      <a routerLink="/" class="logo">Email AutoWriter</a>
+      
+      <div class="nav-links">
+        <a routerLink="/generate" *ngIf="auth.isLoggedIn()">Generate</a>
+        <a routerLink="/history" *ngIf="auth.isLoggedIn()">History</a>
+        <a routerLink="/profile" *ngIf="auth.isLoggedIn()">Profile</a>
+        
+        <ng-container *ngIf="!auth.isLoggedIn(); else loggedIn">
+          <a routerLink="/login">Login</a>
+          <a routerLink="/register">Register</a>
+        </ng-container>
+        
+        <ng-template #loggedIn>
+          <button (click)="logout()">Logout</button>
+        </ng-template>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="main-content">
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</main>
+
+<footer class="app-footer">
+  <div class="container">
+    <p>&copy; 2023 Email AutoWriter. All rights reserved.</p>
+  </div>
+</footer>

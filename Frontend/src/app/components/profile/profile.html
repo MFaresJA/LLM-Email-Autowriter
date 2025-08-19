@@ -1,0 +1,49 @@
+<div class="page-bg">
+  
+  <div class="topbar">
+    <div class="brand">📧 LLM Email AutoWriter</div>
+    <div class="actions">
+      <a routerLink="/history" class="btn btn-secondary">View History</a>
+      <a routerLink="/generate" class="btn btn-primary">Go to Generate</a>
+      <button type="button" class="btn btn-danger" (click)="logout()">Logout</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="paper-card profile-card">
+      <h2>Profile</h2>
+
+      <div *ngIf="error" class="error">{{ error }}</div>
+
+      <form (ngSubmit)="save()" class="grid">
+        <label for="name">Full Name</label>
+        <input
+          id="name"
+          class="input"
+          [(ngModel)]="name"
+          name="name"
+          placeholder="Your name"
+          [disabled]="saving"
+        />
+
+        <label>Email</label>
+        <div class="readonly">{{ email }}</div>
+
+        <label>Verified</label>
+        <span class="badge badge-success" *ngIf="is_verified">Yes</span>
+        <span
+          class="badge"
+          *ngIf="!is_verified"
+          style="background:#fff1f2;color:#b42318;border:1px solid #f9c7ce;"
+        >No</span>
+
+        
+        <div class="actions">
+          <button type="submit" class="btn btn-primary" [disabled]="saving">
+            {{ saving ? 'Saving…' : 'Save' }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

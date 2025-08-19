@@ -1,0 +1,36 @@
+<div class="page-bg center">
+  <div class="paper-card verify-card">
+    <h2>Verify Your Email</h2>
+
+    
+    <div *ngIf="error" class="alert error">{{ error }}</div>
+
+    
+    <div *ngIf="isLoading" class="muted">Checking your verification…</div>
+
+    
+    <div *ngIf="!isLoading && !isVerified">
+      <p class="muted">Please check your inbox for the verification link.</p>
+
+      <div class="row-wrap mt-16">
+        <button class="btn btn-primary" (click)="checkVerificationStatus()" [disabled]="isLoading">
+          Check Verification Status
+        </button>
+        <button class="btn btn-light" (click)="resendVerification()" [disabled]="isLoading">
+          Resend Verification Email
+        </button>
+      </div>
+    </div>
+
+    
+    <div *ngIf="!isLoading && isVerified" class="alert success">
+      ✅ Your email has been verified!
+      <div class="muted" *ngIf="info">{{ info }}</div>
+
+      <div class="row-wrap mt-16">
+        <a class="btn btn-primary" (click)="goNow()">Go now</a>
+        <a routerLink="/profile" class="btn btn-light">Go to Profile</a>
+      </div>
+    </div>
+  </div>
+</div>

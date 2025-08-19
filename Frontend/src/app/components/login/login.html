@@ -1,0 +1,25 @@
+<div class="page-bg center">
+  <div class="paper-card auth-card">
+    <h2>Welcome Back</h2>
+
+    <form (ngSubmit)="submit()">
+      <div *ngIf="error" class="error">{{ error }}</div>
+
+      <label>Email Address</label>
+      <input class="input" type="email" [(ngModel)]="email" name="email" placeholder="you@example.com" required />
+
+      <label>Password</label>
+      <input class="input" type="password" [(ngModel)]="password" name="password" placeholder="••••••••" required />
+
+      <button class="btn btn-primary submit" [disabled]="isLoading">
+        <span *ngIf="!isLoading">Log In</span>
+        <span *ngIf="isLoading">Logging in…</span>
+      </button>
+    </form>
+
+    <div class="muted">
+      Don’t have an account?
+      <a routerLink="/register">Sign up</a>
+    </div>
+  </div>
+</div>

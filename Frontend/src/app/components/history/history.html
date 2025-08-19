@@ -1,0 +1,91 @@
+
+<header class="topbar">
+  <div class="brand">
+    <span class="app">
+      <span class="app-emoji">✉️</span>
+      <span class="app-name">LLM Email AutoWriter</span>
+      <span class="crumb">· History</span>
+    </span>
+  </div>
+
+  <div class="actions">
+    <div class="search-wrap">
+      <input
+        class="search"
+        type="search"
+        placeholder="Search emails (prompt, content, tone, length)"
+        [(ngModel)]="search"
+        (ngModelChange)="onSearchChange()"
+      />
+      <span class="glow"></span>
+    </div>
+
+    <button class="profile-btn" (click)="toggleProfile()">
+      <span class="avatar">{{ (profile?.name || 'U').slice(0,1).toUpperCase() }}</span>
+      <span class="name">{{ profile?.name || 'Profile' }}</span>
+      <span class="chev" [class.open]="showProfile">▾</span>
+    </button>
+
+    <button class="btn outline" (click)="logout()">Logout</button>
+    <button class="btn primary" (click)="goGenerate()">Back to Generate</button>
+  </div>
+</header>
+
+
+<section class="profile-panel" [class.open]="showProfile">
+  <div class="profile-inner" *ngIf="profile; else loadingProfile">
+    <div class="row"><div class="label">Name</div><div class="value">{{ profile.name }}</div></div>
+    <div class="row"><div class="label">Email</div><div class="value">{{ profile.email }}</div></div>
+    <div class="row">
+      <div class="label">Verified</div>
+      <div class="value">
+        <span class="badge" [class.ok]="profile.is_verified" [class.warn]="!profile.is_verified">
+          {{ profile.is_verified ? 'Yes' : 'No' }}
+        </span>
+      </div>
+    </div>
+    <div class="panel-actions">
+      <a routerLink="/profile" class="btn ghost">Open Profile</a>
+      <button class="btn" (click)="goGenerate()">Generate New</button>
+    </div>
+  </div>
+  <ng-template #loadingProfile>
+    <div class="profile-inner"><p>Loading profile…</p></div>
+  </ng-template>
+</section>
+
+
+<div class="page-bg">
+  <main class="page">
+    <h1 class="page-title card">History</h1>
+
+    <div *ngIf="loading" class="loading">Loading…</div>
+    <div *ngIf="error" class="error card">{{ error }}</div>
+
+    <div *ngIf="!loading && filtered.length === 0" class="empty card">
+      No results. Try another search term or
+      <a (click)="goGenerate()" style="cursor:pointer; text-decoration:underline;">generate a new email</a>.
+    </div>
+
+    <div class="list">
+      <article
+        class="card pop"
+        *ngFor="let e of filtered; let i = index"
+        [style.--delay]="(i % 6) * 60 + 'ms'"
+      >
+        <div class="meta">
+          <span class="date">{{ e.created_at | date:'medium' }}</span>
+          <span class="pill">{{ e.tone }}</span>
+          <span class="pill">{{ e.length }}</span>
+
+          <button class="btn copy" (click)="copyEmail(e)">
+            {{ copiedId === e.id ? 'Copied!' : 'Copy' }}
+          </button>
+        </div>
+
+        <div class="prompt">Prompt: <strong>{{ e.prompt }}</strong></div>
+        <pre class="body">{{ e.generated_email }}</pre>
+      </article>
+    </div>
+  </main>
+</div>

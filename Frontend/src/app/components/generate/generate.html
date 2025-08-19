@@ -1,0 +1,128 @@
+
+<header class="topbar">
+  <div class="brand">
+    <span class="logo">📧</span>
+    <span class="brand-text">LLM Email AutoWriter</span>
+    <span class="dim">· Generate</span>
+  </div>
+
+  <div class="actions">
+    <button class="btn ghost" (click)="logout()">Logout</button>
+
+    <button class="profile-btn" (click)="toggleProfile()">
+      <span class="avatar">{{ (profile?.name || 'U').slice(0,1).toUpperCase() }}</span>
+      <span class="name">{{ profile?.name || 'Profile' }}</span>
+      <span class="chev" [class.open]="showProfile">▾</span>
+    </button>
+  </div>
+</header>
+
+
+<section class="profile-panel" [class.open]="showProfile">
+  <div class="profile-inner" *ngIf="profile; else loadingProfile">
+    <div class="row"><div class="label">Name</div><div class="value">{{ profile.name }}</div></div>
+    <div class="row"><div class="label">Email</div><div class="value">{{ profile.email }}</div></div>
+    <div class="row">
+      <div class="label">Verified</div>
+      <div class="value">
+        <span class="badge" [class.ok]="profile.is_verified" [class.warn]="!profile.is_verified">
+          {{ profile.is_verified ? 'Yes' : 'No' }}
+        </span>
+      </div>
+    </div>
+    <div class="panel-actions">
+      <a routerLink="/profile" class="btn ghost">Open Profile</a>
+      <button class="btn" (click)="goHistory()">View History</button>
+    </div>
+  </div>
+  <ng-template #loadingProfile><div class="profile-inner"><p>Loading profile…</p></div></ng-template>
+</section>
+
+
+<main class="page">
+  <div class="grid">
+    
+    <section class="paper-card card-pop gen-card">
+      <h3 class="card-title">Compose</h3>
+
+      <form class="generator" (ngSubmit)="submit()">
+        <textarea
+          [(ngModel)]="prompt"
+          name="prompt"
+          rows="6"
+          placeholder="Describe the email you want to write…"
+          required
+        ></textarea>
+
+        <div class="controls">
+          <label> Tone:
+            <select [(ngModel)]="tone" name="tone">
+              <option value="formal">formal</option>
+              <option value="informal">informal</option>
+              <option value="neutral">neutral</option>
+              <option value="friendly">friendly</option>
+              <option value="professional">professional</option>
+            </select>
+          </label>
+
+          <label> Length:
+            <select [(ngModel)]="length" name="length">
+              <option value="short">short</option>
+              <option value="medium">medium</option>
+              <option value="long">long</option>
+            </select>
+          </label>
+
+          <button type="submit" [disabled]="isLoading" class="btn primary">
+            {{ isLoading ? 'Generating…' : 'Generate' }}
+          </button>
+        </div>
+      </form>
+
+      <div *ngIf="error" class="error">{{ error }}</div>
+    </section>
+
+    
+    <aside class="paper-card card-pop info-card">
+      <h3 class="card-title">Additional Info (optional)</h3>
+
+      <div class="stack">
+        <label class="field">
+          <span>Recipient name</span>
+          <input [(ngModel)]="recipientName" name="recipientName" type="text" placeholder="e.g., Dr. Ahmed" />
+        </label>
+
+        <label class="field">
+          <span>Your name (signature)</span>
+          <input [(ngModel)]="senderName" name="senderName" type="text" placeholder="e.g., Fares Rezk" />
+        </label>
+
+        <label class="field">
+          <span>Extras after your name</span>
+          <textarea
+            [(ngModel)]="extras"
+            name="extras"
+            rows="5"
+            placeholder="Phone\nCompany / Organization\nAny extra lines…"
+          ></textarea>
+        </label>
+
+        <div class="muted tip">
+          These items are optional. If provided, they’ll be appended as a signature block after your name.
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  
+  <section *ngIf="result" class="paper-card card-pop result-wrap">
+    <div class="result-actions">
+      <div class="muted">Generated Email</div>
+      <span class="spacer"></span>
+      <button class="btn" (click)="copyResult()">{{ copied ? 'Copied!' : 'Copy' }}</button>
+      <button class="btn ghost" (click)="goHistory()">Open History</button>
+      <button class="btn ghost" (click)="clearAll()">Clear</button>
+    </div>
+    <pre class="result">{{ result }}</pre>
+  </section>
+</main>
