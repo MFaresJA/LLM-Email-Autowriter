@@ -1,0 +1,17 @@
+# Python (Backend)
+__pycache__/
+*.py[cod]
+.env
+emails.db
+
+# Node (Frontend)
+node_modules/
+dist/
+.angular/
+.env
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
