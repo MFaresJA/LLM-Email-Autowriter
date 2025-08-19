@@ -1,17 +1,96 @@
+# ---------------------------
 # Python (Backend)
+# ---------------------------
 __pycache__/
 *.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
 .env
+.envrc
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
 emails.db
 
+# Flask & Django
+instance/
+.webassets-cache
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Logs & Reports
+*.log
+*.cover
+*.py.cover
+coverage.xml
+nosetests.xml
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+.hypothesis/
+.pytest_cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# IDEs & Editors
+.vscode/
+.idea/
+.spyderproject
+.spyproject
+.ropeproject
+
+# Tools
+.pyre/
+.pytype/
+.ruff_cache/
+.pdm-python
+.pdm-build/
+__pypackages__/
+.pypirc
+.cursorignore
+.cursorindexingignore
+
+# Notebooks & Docs
+.ipynb_checkpoints
+docs/_build/
+marimo/_static/
+marimo/_lsp/
+__marimo__/
+
+# Sphinx / MkDocs
+/site
+
+# PyInstaller
+*.spec
+*.manifest
+
+# Misc
+MANIFEST
+.Python
+*.mo
+*.pot
+
+# ---------------------------
 # Node (Frontend)
+# ---------------------------
 node_modules/
 dist/
 .angular/
-.env
 
-# VS Code
-.vscode/
-
-# Logs
-*.log
+# ---------------------------
+# OS
+# ---------------------------
+.DS_Store
+Thumbs.db
