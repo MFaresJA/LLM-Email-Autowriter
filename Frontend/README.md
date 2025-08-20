@@ -6,10 +6,10 @@ This is the frontend interface of the LLM Email Autowriter project, built using 
 👉 [Heroku Deployment Link](https://llm-email-autowriter-demo-e615d6f6162e.herokuapp.com/generate)  
 
 ## 📚 Table of Contents
-- [Features](#-features)
-- [UI Screenshots](#-ui-screenshots)
-- [Setup & Run](#-setup--run)
-- [Tech](#-tech)
+- [Features](#features)
+- [UI Screenshots](#ui-screenshots)
+- [Setup & Run](#setup--run)
+- [Tech](#tech)
 
 ![Homepage](../assets/homepage.jpg)
 *Landing page with feature highlights*
