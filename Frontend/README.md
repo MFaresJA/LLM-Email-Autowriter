@@ -1,59 +1,79 @@
-# Frontend
+# 🌐 Frontend - LLM Email Autowriter
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.6.
+This is the frontend interface of the LLM Email Autowriter project, built using Angular. It allows users to input prompts, select tone and length, manage authentication, and interact with the LLM-powered backend in real time.
 
-## Development server
+![Homepage](../assets/homepage.jpg)
+*Landing page with feature highlights*
 
-To start a local development server, run:
+## 🧠 Features
+
+- Prompt input with tone and length customization
+- Signature and recipient input fields
+- User registration, login, profile view
+- Real-time email generation
+- History view with search and filtering
+- Responsive and clean UI
+
+## 🖼️ UI Screenshots
+
+### Prompt Input & Generation
+
+![Prompt UI](../assets/PromptWithMoreSpecification.jpg)
+*Generate email with tone & length selection*
+
+![Tone Options](../assets/ShowingTone.jpg)
+*Tone options dropdown*
+
+![Length Options](../assets/ShowingLength.jpg)
+*Length options dropdown*
+
+### Generated Output
+
+![Generated Email](../assets/generatedEmail.jpg)
+*Email generated from prompt*
+
+![Copy & Clear](../assets/CopyandClearbuttons.jpg)
+*Buttons to copy or clear the output*
+
+### History and Search
+
+![History Page](../assets/HistoryPage.jpg)
+*Full email generation history*
+
+![Search History](../assets/searchingusingsearchbarinHistory.jpg)
+*Search by keyword in history*
+
+### Profile and Auth
+
+![Profile Dropdown](../assets/ProfileTap.jpg)
+*Authenticated profile menu*
+
+![Profile Page](../assets/ProfilePage.jpg)
+*User profile info (name, email, verification)*
+
+![Register Page](../assets/registerpage.jpg)
+*Account creation form*
+
+![Login Page](../assets/loginpage.jpg)
+*User login page*
+
+---
+
+## 🛠️ Setup & Run
 
 ```bash
+cd Frontend
+npm install
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Visit: [http://localhost:4200](http://localhost:4200)
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 📁 Tech
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Angular 20.1.6
+- TypeScript, HTML, CSS
+- Angular Forms, Routing
+- JWT Token Storage (HttpOnly Cookie)
