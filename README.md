@@ -166,7 +166,10 @@ Access frontend: http://localhost:4200/
 = Improved model safety filtering
 - Export/download emails
 ---
-👨‍💻 Author
-- Made by Mohammad Fares Aljamous
-- GitHub: MFaresJA
-- Email: faresaljamous04@gmail.com
+## 👤 Author
+
+- Made by **Mohammad Fares Aljamous**
+- 🐙 GitHub: [MFaresJA](https://github.com/MFaresJA)
+- ✉️ Email: [faresaljamous04@gmail.com](mailto:faresaljamous04@gmail.com)
+- 💼 LinkedIn: [mohammad-fares04](https://www.linkedin.com/in/mohammad-fares04?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app)
+
