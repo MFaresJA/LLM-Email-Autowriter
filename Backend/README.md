@@ -65,7 +65,7 @@ Visit: [http://localhost:8000/docs](http://localhost:8000/docs)
 You can choose between:
 
 - ✅ **vLLM (local on GPU)**: [http://localhost:8000/generate](http://localhost:8000/generate)
-- 🌐 **Hugging Face Router (Heroku demo)**
+- 🌐 **Hugging Face Router (Heroku demo)**: [Heroku Deployment Link](https://llm-email-autowriter-demo-e615d6f6162e.herokuapp.com/generate)
 
 ---
 
