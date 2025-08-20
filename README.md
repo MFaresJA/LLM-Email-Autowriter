@@ -118,6 +118,15 @@ Accessible via `/docs` route from the FastAPI backend. You can register, login, 
 
 ---
 
+## 🏗️ System Architecture & Request Flow
+
+The following diagram shows the architecture of the LLM Email Autowriter system, including frontend, backend, authentication, database, and LLM inference flow (vLLM locally with GPU, or Hugging Face Router as fallback on cloud):
+
+![System Overview](./assets/Systemoverview.png)  
+*System Architecture & Request Flow*
+
+---
+
 ## 🧪 Development Setup
 
 ```bash
