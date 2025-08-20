@@ -8,7 +8,7 @@ LLM Email Autowriter is a full-stack AI-powered web application that helps users
 
 You can try out the deployed version of this project here:
 
-🔗 **[LLM Email Autowriter on Heroku](https://your-heroku-app-name.herokuapp.com/)**
+🔗 **[LLM Email Autowriter on Heroku](https://llm-email-autowriter-demo-e615d6f6162e.herokuapp.com/home)**
 
 > 🧪 You may need to register or log in with a valid email to test all features.  
 > ✉️ **Note:** Email verification links may not be sent directly due to Heroku marking them as unsafe.  
