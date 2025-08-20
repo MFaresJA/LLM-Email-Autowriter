@@ -167,6 +167,6 @@ Access frontend: http://localhost:4200/
 - Export/download emails
 ---
 👨‍💻 Author
-> Made by Mohammad Fares Aljamous
-> GitHub: MFaresJA
-> Email: faresaljamous04@gmail.com
+- Made by Mohammad Fares Aljamous
+- GitHub: MFaresJA
+- Email: faresaljamous04@gmail.com
