@@ -2,6 +2,19 @@
 
 LLM Email Autowriter is a full-stack AI-powered web application that helps users generate professional, customized emails from short prompts — fast. Built with a modern stack (Angular + FastAPI + vLLM), the system supports tone and length adjustment, user authentication, and history tracking, all within a sleek and intuitive interface.
 
+---
+
+## 🌐 Live Demo
+
+You can try out the deployed version of this project here:
+
+🔗 **[LLM Email Autowriter on Heroku](https://your-heroku-app-name.herokuapp.com/)**
+
+> 🧪 You may need to register or log in with a valid email to test all features.  
+> ✉️ **Note:** Email verification links may not be sent directly due to Heroku marking them as unsafe.  
+> As a workaround, you can skip to `/generate` to test the app manually after registration.  
+> ⏳ **Note:** The free-tier Heroku instance may take a few seconds to wake up when inactive.
+
 ![Homepage](./assets/homepage.jpg)  
 *Homepage showcasing main features and call-to-actions*
 
@@ -45,6 +58,9 @@ LLM Email Autowriter is a full-stack AI-powered web application that helps users
 
 ![Login Page](./assets/loginpage.jpg)  
 *User login page*
+
+![Verification Page](./assets/verificationpage.png)  
+*Email verification prompt UI*
 
 ![Email Verification Response](./assets/emailverification.jpg)  
 *Simulated email verification response*
@@ -102,45 +118,55 @@ Accessible via `/docs` route from the FastAPI backend. You can register, login, 
 
 ---
 
+## 🏗️ System Architecture & Request Flow
+
+The following diagram shows the architecture of the LLM Email Autowriter system, including frontend, backend, authentication, database, and LLM inference flow (vLLM locally with GPU, or Hugging Face Router as fallback on cloud):
+
+![System Overview](./assets/Systemoverview.png)  
+*System Architecture & Request Flow*
+
+---
+
 ## 🧪 Development Setup
 
 ```bash
 # Clone the repo
 git clone https://github.com/MFaresJA/LLM-Email-Autowriter.git
 cd LLM-Email-Autowriter
-
+```
+---
 🔧 Backend Setup
+```bash
 cd Backend
 python -m venv venv
 source venv/bin/activate  # or venv\Scripts\activate on Windows
 pip install -r requirements.txt
-
-# Create .env file based on .env.example
+```
+- Create a .env file based on .env.example, then run:
+```bash
 uvicorn main:app --reload
-
-Visit: http://localhost:8000/docs
-
+```
+Access backend Swagger: http://localhost:8000/docs
+---
 💻 Frontend Setup
+```bash
 cd Frontend
 npm install
 ng serve
-
-Visit: http://localhost:4200/
-
+```
+Access frontend: http://localhost:4200/
+---
 📦 Docker (Optional for vLLM)
-
-The backend is Docker-ready to run Qwen models using vLLM:
-Add your Qwen2.5 model to the backend
-Use vLLM as the model server
-
+- Backend is Docker-ready to serve Qwen models using vLLM.
+- Add your Qwen2.5 model to the backend.
+- Use vLLM as the inference engine.
+---
 ✅ Future Work
-
-Admin dashboard for usage monitoring
-Improved model safety filtering
-Export/download emails
-
+- Admin dashboard for usage monitoring
+= Improved model safety filtering
+- Export/download emails
+---
 👨‍💻 Author
-Made by Mohammad Fares Aljamous
-GitHub: MFaresJA
-
-Email: faresaljamous04@gmail.com
+- Made by Mohammad Fares Aljamous
+- GitHub: MFaresJA
+- Email: faresaljamous04@gmail.com
