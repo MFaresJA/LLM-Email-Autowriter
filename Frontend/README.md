@@ -19,43 +19,43 @@ This is the frontend interface of the LLM Email Autowriter project, built using 
 ### Prompt Input & Generation
 
 ![Prompt UI](../assets/PromptWithMoreSpecification.jpg)
-*Generate email with tone & length selection*
+- *Generate email with tone & length selection*
 
 ![Tone Options](../assets/ShowingTone.jpg)
-*Tone options dropdown*
+- *Tone options dropdown*
 
 ![Length Options](../assets/ShowingLength.jpg)
-*Length options dropdown*
+- *Length options dropdown*
 
 ### Generated Output
 
 ![Generated Email](../assets/generatedEmail.jpg)
-*Email generated from prompt*
+- *Email generated from prompt*
 
 ![Copy & Clear](../assets/CopyandClearbuttons.jpg)
-*Buttons to copy or clear the output*
+- *Buttons to copy or clear the output*
 
 ### History and Search
 
 ![History Page](../assets/HistoryPage.jpg)
-*Full email generation history*
+- *Full email generation history*
 
 ![Search History](../assets/searchingusingsearchbarinHistory.jpg)
-*Search by keyword in history*
+- *Search by keyword in history*
 
 ### Profile and Auth
 
 ![Profile Dropdown](../assets/ProfileTap.jpg)
-*Authenticated profile menu*
+- *Authenticated profile menu*
 
 ![Profile Page](../assets/ProfilePage.jpg)
-*User profile info (name, email, verification)*
+- *User profile info (name, email, verification)*
 
 ![Register Page](../assets/registerpage.jpg)
-*Account creation form*
+- *Account creation form*
 
 ![Login Page](../assets/loginpage.jpg)
-*User login page*
+- *User login page*
 
 ---
 
