@@ -14,12 +14,12 @@ This is the FastAPI backend of the LLM Email Autowriter system. It handles user 
 ## 🧪 API Documentation (Swagger)
 
 ![Swagger](../assets/swaggerpage.jpg)
-*API endpoints overview*
+- *API endpoints overview*
 
 ### Email Verification Logic
 
 ![Email Verification](../assets/emailverification.jpg)
-*Simulated email verification message*
+- *Simulated email verification message*
 
 ## 🔐 Auth Flow
 
@@ -33,8 +33,8 @@ This is the FastAPI backend of the LLM Email Autowriter system. It handles user 
 
 ## 🧱 System Architecture
 
-![System Diagram](../assets/90190a83-44f7-44c8-99cf-93b56b201fe3.png)
-*Architecture & flow overview*
+![System Diagram](../assets/Systemoverview.png)
+- *Architecture & flow overview*
 
 ---
 
