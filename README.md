@@ -146,7 +146,7 @@ pip install -r requirements.txt
 ```bash
 uvicorn main:app --reload
 ```
-Access backend Swagger: http://localhost:8000/docs
+> Access backend Swagger: http://localhost:8000/docs
 ---
 💻 Frontend Setup
 ```bash
@@ -154,7 +154,7 @@ cd Frontend
 npm install
 ng serve
 ```
-Access frontend: http://localhost:4200/
+> Access frontend: http://localhost:4200/
 ---
 📦 Docker (Optional for vLLM)
 - Backend is Docker-ready to serve Qwen models using vLLM.
