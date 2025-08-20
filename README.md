@@ -146,7 +146,7 @@ pip install -r requirements.txt
 ```bash
 uvicorn main:app --reload
 ```
-- Access backend Swagger: http://localhost:8000/docs
+Access backend Swagger: http://localhost:8000/docs
 ---
 💻 Frontend Setup
 ```bash
