@@ -2,14 +2,23 @@
 
 This is the frontend interface of the LLM Email Autowriter project, built using Angular. It allows users to input prompts, select tone and length, manage authentication, and interact with the LLM-powered backend in real time.
 
+🧪 **Try the Live Demo**  
+👉 [Heroku Deployment Link](https://llm-email-autowriter-demo-e615d6f6162e.herokuapp.com/generate)  
+
+## 📚 Table of Contents
+- [Features](#-features)
+- [UI Screenshots](#-ui-screenshots)
+- [Setup & Run](#-setup--run)
+- [Tech](#-tech)
+
 ![Homepage](../assets/homepage.jpg)
 *Landing page with feature highlights*
 
 ## 🧠 Features
 
-- Prompt input with tone and length customization
+- Prompt input with real-time tone and length customization
 - Signature and recipient input fields
-- User registration, login, profile view
+- Secure user authentication with JWT, profile management
 - Real-time email generation
 - History view with search and filtering
 - Responsive and clean UI
@@ -71,7 +80,7 @@ Visit: [http://localhost:4200](http://localhost:4200)
 
 ---
 
-## 📁 Tech
+🧰 Tech Stack
 
 - Angular 20.1.6
 - TypeScript, HTML, CSS
