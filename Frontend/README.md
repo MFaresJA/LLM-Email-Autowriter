@@ -80,7 +80,7 @@ Visit: [http://localhost:4200](http://localhost:4200)
 
 ---
 
-##🧰 Tech Stack
+## 🧰 Tech Stack
 
 - Angular 20.1.6
 - TypeScript, HTML, CSS
